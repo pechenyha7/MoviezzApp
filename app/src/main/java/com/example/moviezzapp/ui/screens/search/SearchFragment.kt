@@ -7,6 +7,7 @@ import androidx.core.view.isVisible
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.PagerSnapHelper
+import androidx.recyclerview.widget.RecyclerView
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.moviezzapp.R
 import com.example.moviezzapp.databinding.FragmentSearchBinding
@@ -32,7 +33,7 @@ class SearchFragment : BaseFragment(R.layout.fragment_search) {
 
 			rvMovies.apply {
 				adapter = movieAdapter
-				layoutManager = ProminentLayoutManager(requireContext(), minScaleDistanceFactor = 5f)
+				layoutManager = ProminentLayoutManager(context, RecyclerView.HORIZONTAL, minScaleDistanceFactor = 5f)
 				PagerSnapHelper().attachToRecyclerView(rvMovies)
 			}
 

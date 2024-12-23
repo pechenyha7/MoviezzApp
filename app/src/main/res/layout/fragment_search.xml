@@ -45,7 +45,7 @@
 
 	<androidx.recyclerview.widget.RecyclerView
 		android:id="@+id/rvMovies"
-		android:layout_width="match_parent"
+		android:layout_width="0dp"
 		android:layout_height="wrap_content"
 		android:layout_marginTop="16dp"
 		android:clipChildren="false"
@@ -56,7 +56,6 @@
 		app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHeight_percent=".5"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toBottomOf="@+id/tvResults"
 		app:layout_constraintVertical_bias="0"
