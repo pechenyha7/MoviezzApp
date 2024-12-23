@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<style name="AppStyle.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+		<item name="navigationIcon">@drawable/ic_back</item>
+		<item name="navigationIconTint">@color/color_text_primary</item>
+		<item name="titleCentered">true</item>
+		<item name="titleTextColor">@color/color_text_primary</item>
+		<item name="titleTextAppearance">@style/Toolbar.Title.TextAppearance</item>
+	</style>
+
+	<style name="Toolbar.Title.TextAppearance" parent="">
+		<item name="android:textSize">18sp</item>
+		<item name="android:textStyle">bold</item>
+	</style>
+
+	<style name="AppStyle.ProgressBar" parent="">
+		<item name="indicatorSize">50dp</item>
+		<item name="indicatorColor">@color/color_loader</item>
+		<item name="android:indeterminate">true</item>
+	</style>
+
+	<style name="AppStyle.Message" parent="">
+		<item name="android:textColor">@color/color_text_primary</item>
+		<item name="android:textSize">14sp</item>
+		<item name="android:textStyle">bold</item>
+	</style>
+
+	<style name="ShapeAppearance.Radius16" parent="">
+		<item name="cornerFamily">rounded</item>
+		<item name="cornerSize">16dp</item>
+	</style>
+
+</resources>

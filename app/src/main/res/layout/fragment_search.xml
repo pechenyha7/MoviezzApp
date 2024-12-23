@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<EditText
+		android:id="@+id/etSearch"
+		android:layout_width="0dp"
+		android:layout_height="48dp"
+		android:layout_marginStart="16dp"
+		android:layout_marginTop="32dp"
+		android:layout_marginEnd="10dp"
+		android:background="@drawable/bg_search"
+		android:drawableStart="@drawable/ic_search"
+		android:drawablePadding="10dp"
+		android:drawableTint="@color/color_text_secondary"
+		android:hint="@string/search_hint"
+		android:imeOptions="actionDone"
+		android:importantForAutofill="no"
+		android:inputType="text"
+		android:paddingHorizontal="16dp"
+		android:textColor="@color/color_text_primary"
+		android:textColorHint="@color/color_text_secondary"
+		app:layout_constraintEnd_toStartOf="@+id/ivFavorites"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<com.google.android.material.imageview.ShapeableImageView
+		android:id="@+id/ivFavorites"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		android:layout_marginEnd="16dp"
+		android:background="@color/color_favorites_bg"
+		android:foreground="?android:selectableItemBackgroundBorderless"
+		android:scaleType="centerInside"
+		app:layout_constraintBottom_toBottomOf="@id/etSearch"
+		app:layout_constraintDimensionRatio="1:1"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="@id/etSearch"
+		app:shapeAppearanceOverlay="@style/ShapeAppearance.Radius16"
+		app:srcCompat="@drawable/ic_favorites_fill"
+		app:tint="@color/color_favorites" />
+
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/rvMovies"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="16dp"
+		android:clipChildren="false"
+		android:clipToPadding="false"
+		android:orientation="horizontal"
+		android:overScrollMode="never"
+		android:paddingHorizontal="75dp"
+		app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHeight_percent=".5"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/tvResults"
+		app:layout_constraintVertical_bias="0"
+		tools:listitem="@layout/item_movie" />
+
+	<TextView
+		android:id="@+id/tvResults"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="20dp"
+		android:text="@string/search_results"
+		android:textColor="@color/color_text_primary"
+		android:textSize="22sp"
+		android:textStyle="bold"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/etSearch" />
+
+	<com.google.android.material.progressindicator.CircularProgressIndicator
+		android:id="@+id/vProgress"
+		style="@style/AppStyle.ProgressBar"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/message_margin_top"
+		android:visibility="gone"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/tvResults" />
+
+	<TextView
+		android:id="@+id/tvMessage"
+		style="@style/AppStyle.Message"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/message_margin_top"
+		android:visibility="gone"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/tvResults"
+		tools:text="@string/error_message" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

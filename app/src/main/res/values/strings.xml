@@ -1,0 +1,16 @@
+<resources>
+	<string name="app_name">MoviezzApp</string>
+
+	<string name="search_hint">Search movie…</string>
+	<string name="search_results">Search Results</string>
+
+	<string name="error_message">Oops, something went wrong</string>
+	<string name="empty_movies">Start typing to search movies</string>
+
+	<string name="details_title">Movie details</string>
+	<string name="details_rating_template">%1$s / 10</string>
+	<string name="details_subtitle_actors">Movie\'s actors</string>
+
+	<string name="favorites_title">Favorite movies</string>
+	<string name="favorites_empty">There are no favorites yet</string>
+</resources>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:layout_gravity="center"
+	android:padding="16dp"
+	tools:background="@drawable/bg_search">
+
+	<com.google.android.material.imageview.ShapeableImageView
+		android:id="@+id/ivImage"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		android:layout_marginBottom="10dp"
+		android:scaleType="centerCrop"
+		android:src="@drawable/bg_placeholder"
+		app:layout_constraintBottom_toTopOf="@id/tvTitle"
+		app:layout_constraintDimensionRatio="2:3"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintVertical_chainStyle="packed"
+		app:shapeAppearanceOverlay="@style/ShapeAppearance.Radius16" />
+
+	<TextView
+		android:id="@+id/tvTitle"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginHorizontal="24dp"
+		android:layout_marginTop="16dp"
+		android:ellipsize="end"
+		android:gravity="center"
+		android:maxLines="3"
+		android:textColor="@color/color_text_primary"
+		android:textSize="20sp"
+		android:textStyle="bold"
+		app:layout_constraintBottom_toTopOf="@id/tvProductionYear"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/ivImage"
+		tools:text="The Color Purple" />
+
+	<TextView
+		android:id="@+id/tvProductionYear"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:textColor="@color/color_text_primary"
+		android:textSize="12sp"
+		android:textStyle="bold"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="@+id/tvTitle"
+		app:layout_constraintStart_toStartOf="@+id/tvTitle"
+		app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+		tools:text="1985" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

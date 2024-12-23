@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+
+	<com.google.android.material.appbar.MaterialToolbar
+		android:id="@+id/lytAppBar"
+		style="@style/AppStyle.Toolbar"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:title="@string/details_title" />
+
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:background="@color/color_divider" />
+
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:fillViewport="true">
+
+		<FrameLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<LinearLayout
+				android:id="@+id/lytContent"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:orientation="vertical"
+				android:padding="24dp">
+
+				<androidx.constraintlayout.widget.ConstraintLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/bg_search"
+					android:paddingVertical="16dp">
+
+					<com.google.android.material.imageview.ShapeableImageView
+						android:id="@+id/ivMovie"
+						android:layout_width="0dp"
+						android:layout_height="0dp"
+						android:layout_marginStart="20dp"
+						android:background="@android:color/white"
+						android:scaleType="centerCrop"
+						app:layout_constraintDimensionRatio="2:3"
+						app:layout_constraintStart_toStartOf="parent"
+						app:layout_constraintTop_toTopOf="parent"
+						app:layout_constraintWidth_percent=".6"
+						app:shapeAppearanceOverlay="@style/ShapeAppearance.Radius16" />
+
+					<com.google.android.material.imageview.ShapeableImageView
+						android:id="@+id/ivFavorite"
+						android:layout_width="60dp"
+						android:layout_height="40dp"
+						android:background="@color/color_favorites_bg"
+						android:foreground="?android:selectableItemBackgroundBorderless"
+						android:scaleType="centerInside"
+						app:layout_constraintEnd_toEndOf="parent"
+						app:layout_constraintStart_toEndOf="@+id/ivMovie"
+						app:layout_constraintTop_toTopOf="@+id/ivMovie"
+						app:shapeAppearanceOverlay="@style/ShapeAppearance.Radius16"
+						app:srcCompat="@drawable/ic_favorites_stroke"
+						app:tint="@color/color_favorites" />
+
+					<LinearLayout
+						android:id="@+id/lytProductionYear"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="10dp"
+						android:gravity="center"
+						android:orientation="vertical"
+						app:layout_constraintBottom_toTopOf="@id/lytDuration"
+						app:layout_constraintEnd_toEndOf="parent"
+						app:layout_constraintStart_toEndOf="@id/ivMovie"
+						app:layout_constraintTop_toBottomOf="@id/ivFavorite">
+
+						<ImageView
+							android:id="@+id/ivProductionYear"
+							android:layout_width="@dimen/icon_size_small"
+							android:layout_height="@dimen/icon_size_small"
+							android:padding="4dp"
+							android:src="@drawable/ic_production"
+							app:tint="@color/color_text_primary"
+							tools:ignore="ContentDescription" />
+
+						<TextView
+							android:id="@+id/tvProductionYear"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:textColor="@color/color_text_primary"
+							android:textSize="12sp"
+							tools:text="2011" />
+					</LinearLayout>
+
+					<LinearLayout
+						android:id="@+id/lytDuration"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:gravity="center"
+						android:orientation="vertical"
+						app:layout_constraintBottom_toTopOf="@id/lytRating"
+						app:layout_constraintEnd_toEndOf="parent"
+						app:layout_constraintStart_toEndOf="@id/ivMovie"
+						app:layout_constraintTop_toBottomOf="@+id/lytProductionYear">
+
+						<ImageView
+							android:id="@+id/ivDuration"
+							android:layout_width="@dimen/icon_size_small"
+							android:layout_height="@dimen/icon_size_small"
+							android:padding="4dp"
+							android:src="@drawable/ic_duration"
+							app:tint="@color/color_text_primary" />
+
+						<TextView
+							android:id="@+id/tvDuration"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:textColor="@color/color_text_primary"
+							android:textSize="12sp"
+							tools:text="100 mins" />
+
+					</LinearLayout>
+
+
+					<LinearLayout
+						android:id="@+id/lytRating"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="10dp"
+						android:gravity="center"
+						android:orientation="vertical"
+						app:layout_constraintBottom_toBottomOf="@id/ivMovie"
+						app:layout_constraintEnd_toEndOf="parent"
+						app:layout_constraintStart_toEndOf="@id/ivMovie"
+						app:layout_constraintTop_toBottomOf="@+id/lytDuration">
+
+						<ImageView
+							android:id="@+id/ivRating"
+							android:layout_width="@dimen/icon_size_small"
+							android:layout_height="@dimen/icon_size_small"
+							android:padding="4dp"
+							android:src="@drawable/ic_rating"
+							app:tint="@color/color_text_primary" />
+
+						<TextView
+							android:id="@+id/tvRating"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:textColor="@color/color_text_primary"
+							android:textSize="12sp"
+							tools:text="10.0 / 10" />
+					</LinearLayout>
+
+				</androidx.constraintlayout.widget.ConstraintLayout>
+
+				<TextView
+					android:id="@+id/tvTitle"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="20dp"
+					android:gravity="start"
+					android:textColor="@color/color_text_primary"
+					android:textSize="24sp"
+					android:textStyle="bold"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toBottomOf="@id/ivMovie"
+					tools:text="Harry Potter and the Deathly Hallows: Part 2" />
+
+				<View
+					android:layout_width="match_parent"
+					android:layout_height="1dp"
+					android:layout_marginTop="10dp"
+					android:background="@color/color_divider" />
+
+				<TextView
+					android:id="@+id/tvPlot"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="20dp"
+					android:lineSpacingExtra="4sp"
+					android:textColor="@color/color_text_secondary"
+					android:textSize="16sp"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+					tools:text="As the battle between the forces of good and evil in the wizarding world escalates, Harry Potter draws ever closer to his final confrontation with Voldemort." />
+
+				<TextView
+					android:id="@+id/tvActorsTitle"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="20dp"
+					android:text="@string/details_subtitle_actors"
+					android:textColor="@color/color_text_primary"
+					android:textSize="18sp"
+					android:textStyle="bold"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toBottomOf="@+id/tvPlot" />
+
+				<TextView
+					android:id="@+id/tvActors"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					android:textColor="@color/color_text_secondary"
+					android:textSize="16sp"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toBottomOf="@+id/tvActorsTitle"
+					tools:text="Daniel Radcliffe, Emma Watson, Rupert Grint" />
+
+			</LinearLayout>
+
+			<com.google.android.material.progressindicator.CircularProgressIndicator
+				android:id="@+id/vProgress"
+				style="@style/AppStyle.ProgressBar"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:layout_marginBottom="100dp"
+				android:visibility="gone" />
+
+			<TextView
+				android:id="@+id/tvError"
+				style="@style/AppStyle.Message"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:layout_marginBottom="100dp"
+				android:text="@string/error_message"
+				android:visibility="gone" />
+
+		</FrameLayout>
+
+	</ScrollView>
+</LinearLayout>
