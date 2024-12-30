@@ -14,7 +14,6 @@ class SearchMovieUseCase @Inject constructor(
 ) : FlowUseCase<String, ResultState<List<Movie>>?>() {
 
     override fun execute(value: String): Flow<ResultState<List<Movie>>?> = flow {
-	    println("DEBUG. SearchMovieUseCase=${this@SearchMovieUseCase}")
         if (value.isBlank()) {
             emit(null)
             return@flow
